@@ -1,0 +1,24 @@
+
+import java.util.*;
+public class Main {
+	public static void main(String [] args) {
+		int n=1532;
+		int original = n;
+		int store=0;
+	
+		while(n>0) {
+		  int last=n%10;
+		  store = (store)+(last*last*last);
+			n=n/10;
+			
+		
+		}
+		
+			if(store == original){
+			  System.out.println("Is armString number.");
+			}else{
+			  System.out.print("Not armString");
+			}
+			
+	}
+}
