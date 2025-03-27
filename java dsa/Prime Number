@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String [] args) {
+        int[] arr = {2, 3, 5, 4, 6, 7, 8};
+        int[] dup={2,3,5,4,6,7,8};
+        ArrayList<Integer> list = new ArrayList<>();
+        int count = 0;
+
+        for (int j = 0; j < arr.length; j++) {
+            boolean isPrime = true;
+            if (arr[j] < 2) {
+                isPrime = false;
+            } else {
+                for (int i = 2; i <= Math.sqrt(arr[j]); i++) {
+                    if (arr[j] % i == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+            
+            if (isPrime) {
+                count++;
+                dup=arr;
+                list.add(dup[j]);
+            }
+        }
+
+        System.out.println("Number of prime numbers: " + count);
+        System.out.println(list);
+    }
+}
